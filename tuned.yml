@@ -1,0 +1,14 @@
+---
+- name: tuned
+  hosts: 127.0.0.1
+  become: yes
+  tasks:
+    - name: install
+      package: 
+       name: tuned
+       state: present
+    - name: Start service
+      service:
+        name: tuned
+        state: started
+        enabled: yes

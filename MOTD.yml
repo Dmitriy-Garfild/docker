@@ -1,0 +1,11 @@
+---
+- name: MOTD
+  hosts: 127.0.0.1
+  become: yes
+  vars:
+    mesage_MOTD: "hi it's me"
+  tasks: 
+    - name: Copy using inline content
+      copy:
+        content: '{{mesage_MOTD}}'
+        dest: /etc/update-motd.d/10-help-text

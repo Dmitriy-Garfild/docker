@@ -1,0 +1,19 @@
+---
+- name: MOTD1
+  hosts: 127.0.0.1
+  gather_facts: yes
+  vars:
+    mesage_MOTD: "heve a good day"
+  tasks:
+    - name: ip and hostname
+      setup:
+      
+
+   
+    - name: Copy using inline content
+      copy:
+        content: '{{ansible_host}} ({{ansible_fqdn}}) ({{mesage_MOTD}})'
+        dest: /etc/update-motd.d/10-help-text
+        owner: root
+        group: root
+        mode: '0644'
