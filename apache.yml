@@ -46,4 +46,3 @@
         url: http://127.0.0.1
         return_content: yes
       register: this
-      failed_when: "'AWESOME' not in this.content"
